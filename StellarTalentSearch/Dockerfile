@@ -1,7 +1,7 @@
 FROM debian:buster
 
 RUN apt-get update
-RUN apt-get install -y wget
+RUN apt-get install -y wget pwgen
 
 # Install Microsoft Trusted Keys
 RUN wget \

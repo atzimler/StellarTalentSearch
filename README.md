@@ -15,4 +15,5 @@ References:
 ---
 - Quickstart on the MSSQL docker container with docker compose: https://docs.docker.com/samples/aspnet-mssql-compose/
 - Providing environment variables for docker-compose from outside of the .yml file: https://docs.docker.com/compose/env-file/
+- Generating self-signed SSL certificate for Apache on Linux: https://www.linux.com/training-tutorials/creating-self-signed-ssl-certificates-apache-linux/
 - 
