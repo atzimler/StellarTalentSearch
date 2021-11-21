@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using StellarTalentSearch.Data;
 
 namespace StellarTalentSearch
 {
@@ -28,6 +30,17 @@ namespace StellarTalentSearch
         {
             services.AddControllers();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "StellarTalentSearch", Version = "v1" }); });
+            services.AddDbContext<StellarTalentSearchDbContext>(options =>
+            {
+                var connectionString = Configuration.GetConnectionString("WebApiDatabase");
+                var password = Environment.GetEnvironmentVariable("SA_PASSWORD");
+                if (!string.IsNullOrEmpty(password))
+                {
+                    connectionString = $"{connectionString};Password={password};";
+                }
+
+                options.UseSqlServer(connectionString);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

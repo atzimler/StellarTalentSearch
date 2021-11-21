@@ -1,0 +1,12 @@
+# This docker compose file contains an MSSQL container definition that can serve as development container, when
+# targeting from non-containerized development environment or when creating Entity Framework migrations.
+# Run docker-compose -f docker-compose-dev-mssql.yml up to start the container.
+# Use "sa" user and the value SA_PASSWORD below to allow access to the database.
+services:
+  sts_dev_db:
+    image: "mcr.microsoft.com/mssql/server"
+    ports:
+      - "2433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "password123!"
