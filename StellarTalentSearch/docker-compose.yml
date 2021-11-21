@@ -8,7 +8,9 @@ services:
     volumes:
       - "./certs:/certs"
       - "./bin/Debug/net5.0:/app"
-  
+    environment: 
+      ASPNETCORE_ENVIRONMENT: Development
+
   sts_db:
     image: "mcr.microsoft.com/mssql/server"
     environment:

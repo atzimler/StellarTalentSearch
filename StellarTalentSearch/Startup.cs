@@ -40,7 +40,8 @@ namespace StellarTalentSearch
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "StellarTalentSearch v1"));
             }
 
-            app.UseHttpsRedirection();
+            // HTTPS redirection is not needed because we have serve the site through HTTPS via Apache.
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 
