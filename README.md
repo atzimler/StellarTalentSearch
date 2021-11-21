@@ -5,8 +5,14 @@ TODO:
 - Creating automatically a self signed certificate in the container.
 - Add authentication, research what would be an easy way to add auth as an independent slice
 - Add database to as docker compose backend.
-- 
+- Add Makefile to bring the whole system up in a quick way. 
 
 To document:
 - Setting up the development docker environment -> talent.stellar hosts
 - Starting the container environment
+
+References:
+---
+- Quickstart on the MSSQL docker container with docker compose: https://docs.docker.com/samples/aspnet-mssql-compose/
+- Providing environment variables for docker-compose from outside of the .yml file: https://docs.docker.com/compose/env-file/
+- 

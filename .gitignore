@@ -6,3 +6,4 @@ riderModule.iml
 
 StellarTalentSearch/.env
 StellarTalentSearch/certs
+**/.idea/**

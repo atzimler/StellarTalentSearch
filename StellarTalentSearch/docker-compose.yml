@@ -1,0 +1,15 @@
+services:
+  sts_web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9443:443"
+    volumes:
+      - "./certs:/certs"
+      - "./bin/Debug/net5.0:/app"
+  
+  sts_db:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      ACCEPT_EULA: "Y"
