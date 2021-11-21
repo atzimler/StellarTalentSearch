@@ -1,4 +1,4 @@
-Initial notes - I took this as a learning project given the circumstances.
+This is my mini research project on assembling different parts of an API project. 
 
 TODO:
 - Document decision on going with .NET 5.0 -> I wanted to hone my skills a bit further
